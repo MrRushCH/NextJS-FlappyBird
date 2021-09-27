@@ -23,8 +23,8 @@ const Obstacle: NextPage<Props> = ({spaceYPos}) => {
 	}, [obstacleBottomRef])
     return (
     <div className={`${styles.container} obstacle-container`}>
-        <div className={styles.obstacle__top} ref={(ref)=> setObstacleTopRef(ref)}></div>
-        <div className={styles.obstacle__bottom} ref={(ref)=> setObstacleBottomRef(ref)}></div>
+        <div className={`${styles.obstacle__top} obstacle__top`} ref={(ref)=> setObstacleTopRef(ref)}></div>
+        <div className={`${styles.obstacle__bottom} obstacle__bottom`} ref={(ref)=> setObstacleBottomRef(ref)}></div>
     </div>
     )
 }
