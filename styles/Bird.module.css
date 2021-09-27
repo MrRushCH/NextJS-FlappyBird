@@ -1,9 +1,66 @@
 .bird {
     height: 50px;
-    width: 50px;
+    width: 75px;
     background-color: rgb(255, 187, 0);
     position: absolute;
     left: 10%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 20;
+    border-radius: 50%;
+}
+
+.beek {
+    width: 30px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    background-color: darkorange;
+    z-index: 15;
+    transform: translate(0, -50%);
+}
+
+.eye {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #000000;
+    left: 60%;
+    top: 20%;
+    border-radius: 50%;
+}
+
+.wings {
+    position: absolute;
+    top: 70%;
+    left: -5%;
+    height: 10px;
+    width: 40px;
+    background-color: darkorange;
+    border-radius: 5px;
+    transform: rotate(-80deg);
+}
+
+.wings::after {
+    content: "";
+    position: absolute;
+    top: 75%;
+    height: 10px;
+    width: 33px;
+    left: 7px;
+    background-color: darkorange;
+    border-radius: 5px;
+}
+
+.wings::before {
+    content: "";
+    position: absolute;
+    top: 150%;
+    height: 10px;
+    left: 15px;
+    width: 25px;
+    background-color: darkorange;
+    border-radius: 5px;
 }

@@ -1,0 +1,6 @@
+.container {
+    position: absolute;
+    font-size: 128px;
+    padding: 42px;
+    z-index: 30;
+}

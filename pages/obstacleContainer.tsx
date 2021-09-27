@@ -4,7 +4,12 @@ import ReactDOM from 'react-dom';
 import styles from '../styles/ObstacleContainer.module.css'
 import Obstacle from './obstacle';
 
-const ObstacleContainer: NextPage = () => {
+interface Props {
+	dead: boolean;
+	onCountIncrease: Function;
+}
+
+const ObstacleContainer: NextPage<Props> = ({dead, onCountIncrease}) => {
 	const [obstacles, setObstacles] = useState<number[]>(generateObstacles(10));
 	const [obstacleContainerRef, setObstacleContainerRef] = useState<HTMLDivElement|null>(null);
 	const [obstacleContainerXPos, setObstacleContainerXPos] = useState(50);
@@ -13,7 +18,7 @@ const ObstacleContainer: NextPage = () => {
 	useEffect(() => {
 		let xPosInitialized = false;
 	  document.addEventListener("keydown", (e) => {
-		if(e.key===" " && !spacePressed) {
+		if(e.key===" " && !spacePressed && !dead) {
 			setSpacePressed(true);
 			if(!xPosInitialized) {
 				setObstacleContainerXPos(obstacleContainerXPos-0.1);
@@ -24,19 +29,27 @@ const ObstacleContainer: NextPage = () => {
 	}, [])
 
     useEffect(() => {
-        if(spacePressed && obstacleContainerRef) {
+		if(dead) {
+			const birdPos = document.querySelector(".bird")?.getBoundingClientRect();
+			if(birdPos && birdPos.y+birdPos.height+5 < window.innerHeight) {
+				setTimeout(() => {
+					setObstacleContainerXPos(obstacleContainerXPos-0.1);
+				}, 10);
+			}
+		}
+        if(spacePressed && obstacleContainerRef && !dead) {
             setTimeout(() => {
 				setObstacleContainerXPos(obstacleContainerXPos-0.1);
 				const obstacleContainer = document.querySelector(".obstacle-container");
 				if(obstacleContainer?.getBoundingClientRect().x && obstacleContainer?.getBoundingClientRect().x <= -200) {
-					console.log(obstacleContainer.getBoundingClientRect().x)
 					const reactDomNode = ReactDOM.findDOMNode(obstacleContainer);
 					reactDomNode?.remove();
+					onCountIncrease();
 					const newObstacles = [...obstacles];
 					newObstacles.push(generateObstacles(1)[0]);
 					setObstacles(newObstacles);
 				}
-
+				
             }, 10);
         }
         if(obstacleContainerRef) {
