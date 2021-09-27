@@ -1,0 +1,19 @@
+.obstacle {
+    height: 100vh;
+    width: 200px;
+    position: relative;
+}
+
+.obstacle__top, .obstacle__bottom {
+    position: absolute;
+    background-color: #118811;
+    width: 200px;
+}
+
+.obstacle__top {
+    top: 0;
+}
+
+.obstacle__bottom {
+    bottom: 0;
+}
