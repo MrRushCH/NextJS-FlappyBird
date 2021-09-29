@@ -73,7 +73,7 @@ const ObstacleContainer: NextPage<Props> = ({dead, onCountIncrease}) => {
 function generateObstacles(numOfObstacles: number) {
 	const obstacles = [];
 	for(let i = 0; i < numOfObstacles; i++) {
-	  obstacles.push(Math.round(Math.random()*75));
+	  obstacles.push(Math.round(Math.random()*70));
 	}
 	return obstacles;
   }

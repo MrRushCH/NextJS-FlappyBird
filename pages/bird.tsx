@@ -69,6 +69,8 @@ const Bird: NextPage<Props> = ({onDeath}) => {
                         setDead(true);
                     }
                 }
+            } else if(birdPos.y >= window.innerHeight-birdPos.height || birdPos.y <= 0) {
+                setDead(true);
             }
         }
         if((!jumpActive || dead) && birdRef && birdTop < 97) {

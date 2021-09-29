@@ -18,7 +18,7 @@ const Obstacle: NextPage<Props> = ({spaceYPos}) => {
 
 	useEffect(() => {
 		if(obstacleBottomRef) {
-			obstacleBottomRef.style.height = `${100-spaceYPos-25}vh`;
+			obstacleBottomRef.style.height = `${100-spaceYPos-30}vh`;
 		}
 	}, [obstacleBottomRef])
     return (
