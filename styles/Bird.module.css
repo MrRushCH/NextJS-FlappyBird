@@ -24,13 +24,14 @@
 
 .beek::after {
     content: "";
-    height: 4px;
+    height: 3px;
     background-color: #000000;
     width: 80%;
     position: absolute;
     top: 50%;
     left: 20%;
     transform: translate(0, -50%);
+    border-radius: 2px 0 0 2px;
 }
 
 .eye {
@@ -46,7 +47,7 @@
 .wings {
     position: absolute;
     top: 70%;
-    left: -5%;
+    left: -10%;
     height: 10px;
     width: 40px;
     background-color: darkorange;

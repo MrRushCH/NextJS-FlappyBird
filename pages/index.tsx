@@ -11,9 +11,26 @@ import ObstacleContainer from './obstacleContainer'
 const Home: NextPage = () => {
   const [dead, setDead] = useState(false);
   const [count, setCount] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+  
+  useEffect(() => {
+    const cookieVal = document.cookie.split("=")[1];
+    if(cookieVal) {
+      setHighScore(parseInt(cookieVal));
+    } else {
+      setHighScore(count);
+    }
+  }, [])
+
+  useEffect(() => {
+    document.cookie = `highScore=${highScore}`;
+  }, [highScore])
 
   const onCountIncrease = () => {
     setCount(count+1);
+    if(count >= highScore) {
+      setHighScore(count+1)
+    }
   }
 
   const onDeath = () => {
@@ -30,7 +47,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Bird onDeath={onDeath}/>
         <ObstacleContainer dead={dead} onCountIncrease={onCountIncrease}/>
-        <Counter count={count}/>
+        <Counter count={count} highScore={highScore}/>
       </main>
     </div>
   )

@@ -1,6 +1,13 @@
-.container {
+.counter {
     position: absolute;
     font-size: 128px;
     padding: 42px;
+    z-index: 30;
+}
+
+.highscore {
+    position: absolute;
+    font-size: 24px;
+    padding: 14px;
     z-index: 30;
 }

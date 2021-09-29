@@ -65,7 +65,7 @@ const Bird: NextPage<Props> = ({onDeath}) => {
                 const obstacleTopPos = document.querySelector(".obstacle__top")?.getBoundingClientRect();
                 const obstacleBottomPos = document.querySelector(".obstacle__bottom")?.getBoundingClientRect();
                 if(obstacleTopPos && obstacleBottomPos) {
-                    if(obstacleBottomPos.y < birdPos.y || obstacleTopPos.height > birdPos.y) {
+                    if(obstacleBottomPos.y < birdPos.y+birdPos.height || obstacleTopPos.height > birdPos.y) {
                         setDead(true);
                     }
                 }
