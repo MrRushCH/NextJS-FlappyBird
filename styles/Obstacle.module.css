@@ -8,6 +8,10 @@
     position: absolute;
     background-color: #118811;
     width: 200px;
+    box-sizing: border-box;
+    border-left: 5px solid #006600;
+    border-right: 5px solid #006600;
+    background: linear-gradient(90deg, #339933 0, #118811 100%);
 }
 
 .obstacle__top {
@@ -21,12 +25,12 @@
 .obstacle__top::after {
     content: "";
     position: absolute;
-    width: 110%;
+    width: 116%;
     bottom: 0;
     height: 50px;
     background-color: #118811;
-    left: -5%;
-    background: linear-gradient(90deg, #117711 0%, #44aa44 100%);
+    left: -8%;
+    background: linear-gradient(90deg, #44aa44 0%, #117711 100%);
     border: 5px solid #006600;
     box-sizing: border-box;
 }
@@ -34,12 +38,12 @@
 .obstacle__bottom::after {
     content: "";
     position: absolute;
-    width: 110%;
+    width: 116%;
     top: 0;
     height: 50px;
     background-color: #118811;
-    left: -5%;
-    background: linear-gradient(90deg, #117711 0%, #44aa44 100%);
+    left: -8%;
+    background: linear-gradient(90deg, #44aa44 0%, #117711 100%);
     border: 5px solid #006600;
     box-sizing: border-box;
 }

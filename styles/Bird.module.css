@@ -12,13 +12,24 @@
 
 .beek {
     width: 30px;
-    height: 15px;
+    height: 20px;
     border-radius: 50%;
     position: absolute;
-    left: 80%;
-    top: 50%;
+    left: 75%;
+    top: 55%;
     background-color: darkorange;
     z-index: 15;
+    transform: translate(0, -50%);
+}
+
+.beek::after {
+    content: "";
+    height: 4px;
+    background-color: #000000;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
     transform: translate(0, -50%);
 }
 
