@@ -50,7 +50,7 @@ const ObstacleContainer: NextPage<Props> = ({dead, onCountIncrease}) => {
 					setObstacles(newObstacles);
 				}
 				
-            }, 10);
+            }, 5);
         }
         if(obstacleContainerRef) {
             obstacleContainerRef.style.left = `${obstacleContainerXPos}vw`;

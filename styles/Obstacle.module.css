@@ -17,3 +17,29 @@
 .obstacle__bottom {
     bottom: 0;
 }
+
+.obstacle__top::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    bottom: 0;
+    height: 50px;
+    background-color: #118811;
+    left: -5%;
+    background: linear-gradient(90deg, #117711 0%, #44aa44 100%);
+    border: 5px solid #006600;
+    box-sizing: border-box;
+}
+
+.obstacle__bottom::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    top: 0;
+    height: 50px;
+    background-color: #118811;
+    left: -5%;
+    background: linear-gradient(90deg, #117711 0%, #44aa44 100%);
+    border: 5px solid #006600;
+    box-sizing: border-box;
+}
